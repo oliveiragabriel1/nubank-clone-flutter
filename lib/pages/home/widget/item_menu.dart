@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class ItemMenu extends StatelessWidget {
   final IconData icon;
   final String text;
-
-  const ItemMenu({Key? key, required this.icon, required this.text})
+  final bool first;
+  const ItemMenu(
+      {Key? key, required this.icon, required this.text, this.first = false})
       : super(key: key);
 
   @override
@@ -13,8 +14,10 @@ class ItemMenu extends StatelessWidget {
       height: 40,
       decoration: BoxDecoration(
         border: Border(
+          top: first
+              ? BorderSide(width: 0.5, color: Colors.white54)
+              : BorderSide.none,
           bottom: BorderSide(width: 0.7, color: Colors.white54),
-          top: BorderSide(width: 0.7, color: Colors.white54),
         ),
       ),
       child: TextButton(

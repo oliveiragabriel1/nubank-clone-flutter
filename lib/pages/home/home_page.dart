@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nubank_clone/pages/home/widget/bottom_menu.dart';
 import 'package:nubank_clone/pages/home/widget/item_menu_bottom.dart';
 import 'package:nubank_clone/pages/home/widget/menu_app.dart';
 import 'package:nubank_clone/pages/home/widget/my_app_bar.dart';
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             top: _screenHeigth * 0.22,
             showMenu: _showMenu,
           ),
+          BottomMenu(showMenu: _showMenu),
           PageViewApp(
             showMenu: _showMenu,
             top: _yPosition,
@@ -69,10 +71,7 @@ class _HomePageState extends State<HomePage> {
 
                 if (_yPosition != positionBottomLimit &&
                     details.delta.dy > 0 &&
-                    _yPosition >
-                        positionTopLimit +
-                            midlePosition -
-                            _screenHeigth * .24) {
+                    _yPosition > positionTopLimit + midlePosition - 50) {
                   _yPosition = positionBottomLimit;
                 }
 
@@ -102,62 +101,6 @@ class _HomePageState extends State<HomePage> {
             currentIndex: _currentIndex,
             top: _screenHeigth * 0.70,
           ),
-          AnimatedPositioned(
-            duration: Duration(milliseconds: 200),
-            bottom:
-                !_showMenu ? 10 + MediaQuery.of(context).padding.bottom : -20,
-            left: 0,
-            right: 0,
-            height: _screenHeigth * 0.15,
-            child: AnimatedOpacity(
-              opacity: !_showMenu ? 1 : 0,
-              duration: Duration(milliseconds: 100),
-              child: Container(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(),
-                  children: <Widget>[
-                    ItemMenuBottom(
-                      icon: Icons.person_add_alt,
-                      text: "Indicar amigos",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.phone_iphone_outlined,
-                      text: "Recarga de celular",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.chat_bubble_outline_rounded,
-                      text: "Cobrar",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.monetization_on_outlined,
-                      text: "Empréstimos",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.move_to_inbox,
-                      text: "Depositar",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.mobile_screen_share,
-                      text: "Transferir",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.format_align_center,
-                      text: "Ajustar limite",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.qr_code,
-                      text: "Pagar",
-                    ),
-                    ItemMenuBottom(
-                      icon: Icons.lock_open_rounded,
-                      text: "Bloquear cartão",
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

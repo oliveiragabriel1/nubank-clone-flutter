@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CardApp extends StatelessWidget {
-  const CardApp({ Key? key }) : super(key: key);
+  final Widget child;
+  const CardApp({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +13,7 @@ class CardApp extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: Colors.white,
         ),
+        child: child,
       ),
     );
   }
