@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
-
-  final String logo = "https://logospng.org/download/nubank/logo-nu-nubank-roxo-icon-2048.png";
+  final String logo =
+      "https://logospng.org/download/nubank/logo-nu-nubank-roxo-icon-2048.png";
 
   final bool showMenu;
   final VoidCallback onTap;
-  
-  const MyAppBar({Key? key, required this.showMenu, required this.onTap}) : super(key: key);
+
+  const MyAppBar({Key? key, required this.showMenu, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
         SizedBox(
-            height: MediaQuery.of(context).padding.top,
-          ),
+          height: MediaQuery.of(context).padding.top,
+        ),
         GestureDetector(
           onTap: onTap,
           child: Container(
@@ -27,14 +28,18 @@ class MyAppBar extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.network(logo,
+                    Image.network(
+                      logo,
                       height: 35,
                       color: Colors.white,
                     ),
-                    SizedBox(width: 10,),
-                    Text("Gabriel", style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      "Gabriel Oliveira",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     )
                   ],
                 ),
