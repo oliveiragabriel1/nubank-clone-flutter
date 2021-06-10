@@ -10,6 +10,7 @@ class MenuApp extends StatelessWidget {
 
   final String qrcode =
       "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png";
+
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -59,8 +60,9 @@ class MenuApp extends StatelessWidget {
                     text: "Conta ",
                     children: [
                       TextSpan(
-                          text: "000000-0",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                        text: "000000-0",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                   style: TextStyle(fontSize: 12),
